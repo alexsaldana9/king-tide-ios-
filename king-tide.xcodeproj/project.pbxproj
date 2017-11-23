@@ -14,6 +14,7 @@
 		1C888A041FC47FC200A54FA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C888A021FC47FC200A54FA2 /* LaunchScreen.storyboard */; };
 		1C888A0F1FC47FC200A54FA2 /* king_tideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A0E1FC47FC200A54FA2 /* king_tideTests.swift */; };
 		1C888A1A1FC47FC200A54FA2 /* king_tideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */; };
+		1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1C888A151FC47FC200A54FA2 /* king-tideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "king-tideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = king_tideUITests.swift; sourceTree = "<group>"; };
 		1C888A1B1FC47FC200A54FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				1C888A001FC47FC200A54FA2 /* Assets.xcassets */,
 				1C888A021FC47FC200A54FA2 /* LaunchScreen.storyboard */,
 				1C888A051FC47FC200A54FA2 /* Info.plist */,
+				1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */,
 			);
 			path = "king-tide";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				1C8889FC1FC47FC200A54FA2 /* ViewController.swift in Sources */,
 				1C8889FA1FC47FC200A54FA2 /* AppDelegate.swift in Sources */,
+				1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
