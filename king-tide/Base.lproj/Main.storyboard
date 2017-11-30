@@ -117,17 +117,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reading Submitted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUz-Ku-81y">
-                                <rect key="frame" x="41" y="97" width="284" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading Submitted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUz-Ku-81y">
+                                <rect key="frame" x="22" y="126" width="330" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="rMq-Ou-kTY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.027450980390000001" green="0.1058823529" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbF-WX-qq7">
-                                <rect key="frame" x="52" y="526" width="286" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbF-WX-qq7">
+                                <rect key="frame" x="22" y="533" width="330" height="63"/>
                                 <color key="backgroundColor" red="0.027450980390000001" green="0.1058823529" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="CRf-e6-gaK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Enter Another Reading">
                                     <color key="titleColor" red="0.99607843137254903" green="0.80000000000000004" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,6 +142,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YbF-WX-qq7" firstAttribute="leading" secondItem="Z9W-Qb-U0e" secondAttribute="leading" constant="22" id="ADH-G6-hWJ"/>
+                            <constraint firstItem="Z9W-Qb-U0e" firstAttribute="bottom" secondItem="YbF-WX-qq7" secondAttribute="bottom" constant="71" id="BoJ-Re-nbh"/>
+                            <constraint firstItem="Z9W-Qb-U0e" firstAttribute="trailing" secondItem="YbF-WX-qq7" secondAttribute="trailing" constant="23" id="JLu-ME-6zy"/>
+                            <constraint firstItem="Z9W-Qb-U0e" firstAttribute="trailing" secondItem="IUz-Ku-81y" secondAttribute="trailing" constant="23" id="dLa-WM-v4V"/>
+                            <constraint firstItem="IUz-Ku-81y" firstAttribute="top" secondItem="Z9W-Qb-U0e" secondAttribute="top" constant="106" id="e4o-ow-Tj4"/>
+                            <constraint firstItem="IUz-Ku-81y" firstAttribute="leading" secondItem="Z9W-Qb-U0e" secondAttribute="leading" constant="22" id="po5-Bq-A1E"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Z9W-Qb-U0e"/>
                     </view>
                 </viewController>
