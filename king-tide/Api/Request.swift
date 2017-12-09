@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol httpPost {
-  typealias CompletionHandler = (_ success: Bool) -> Void
-  func post(param: [String: Any], completionHandler: CompletionHandler)
-}
 
 class PostRequest {
 
@@ -20,7 +16,7 @@ class PostRequest {
     let jsonData = try? JSONSerialization.data(withJSONObject: param)
 
     // create post request
-    let url = URL(string: "https://httpbinorg/post")!
+    let url = URL(string: "https://localhost:3000/readings/all")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
 

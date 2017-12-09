@@ -47,9 +47,11 @@ class ViewController: UIViewController {
 
     print("\(depth) \(salinity) \(description) \(mesurament)\(mesuramentSalinity)")
 
+    let apiKey = "llave2"
 
     let para = ["depth":depth, "salinity":salinity
-      ,"units_depth":mesurament, "units_salinity":mesuramentSalinity, "description":description] as [String : Any]
+      ,"units_depth":mesurament, "units_salinity":mesuramentSalinity,
+       "description":description, "apiKey":apiKey] as [String : Any]
 
     PostRequest.post(param: para)
 
