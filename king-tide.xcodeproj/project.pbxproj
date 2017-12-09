@@ -15,6 +15,8 @@
 		1C888A0F1FC47FC200A54FA2 /* king_tideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A0E1FC47FC200A54FA2 /* king_tideTests.swift */; };
 		1C888A1A1FC47FC200A54FA2 /* king_tideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */; };
 		1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */; };
+		A7D619BD1FDC2DD90045AD05 /* TideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BC1FDC2DD90045AD05 /* TideModel.swift */; };
+		A7D619C01FDC371A0045AD05 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BF1FDC371A0045AD05 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = king_tideUITests.swift; sourceTree = "<group>"; };
 		1C888A1B1FC47FC200A54FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
+		A7D619BC1FDC2DD90045AD05 /* TideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideModel.swift; sourceTree = "<group>"; };
+		A7D619BF1FDC371A0045AD05 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				1C8889F91FC47FC200A54FA2 /* AppDelegate.swift */,
-				1C8889FB1FC47FC200A54FA2 /* ViewController.swift */,
+				A7D619BE1FDC2F290045AD05 /* Api */,
+				A7D619BB1FDC2DA20045AD05 /* Controller */,
+				A7D619BA1FDC2D9B0045AD05 /* View */,
+				A7D619B91FDC2D900045AD05 /* Model */,
 				1C8889FD1FC47FC200A54FA2 /* Main.storyboard */,
 				1C888A001FC47FC200A54FA2 /* Assets.xcassets */,
 				1C888A021FC47FC200A54FA2 /* LaunchScreen.storyboard */,
 				1C888A051FC47FC200A54FA2 /* Info.plist */,
-				1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */,
 			);
 			path = "king-tide";
 			sourceTree = "<group>";
@@ -126,6 +132,38 @@
 				1C888A1B1FC47FC200A54FA2 /* Info.plist */,
 			);
 			path = "king-tideUITests";
+			sourceTree = "<group>";
+		};
+		A7D619B91FDC2D900045AD05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7D619BC1FDC2DD90045AD05 /* TideModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A7D619BA1FDC2D9B0045AD05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A7D619BB1FDC2DA20045AD05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C8889FB1FC47FC200A54FA2 /* ViewController.swift */,
+				1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7D619BE1FDC2F290045AD05 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				A7D619BF1FDC371A0045AD05 /* Request.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C8889FC1FC47FC200A54FA2 /* ViewController.swift in Sources */,
+				A7D619BD1FDC2DD90045AD05 /* TideModel.swift in Sources */,
+				A7D619C01FDC371A0045AD05 /* Request.swift in Sources */,
 				1C8889FA1FC47FC200A54FA2 /* AppDelegate.swift in Sources */,
 				1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */,
 			);

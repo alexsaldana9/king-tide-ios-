@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,14 +23,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H81-ZF-NJW">
                                 <rect key="frame" x="104" y="217" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Depth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqY-Ug-wkV">
                                 <rect key="frame" x="28" y="98" width="76" height="27"/>
@@ -97,17 +97,24 @@
                                 </state>
                                 <connections>
                                     <action selector="submitBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2wS-3h-koz"/>
-                                    <segue destination="tC8-IX-cW1" kind="show" identifier="segueSubmit" id="2W6-wP-INC"/>
+                                    <segue destination="tC8-IX-cW1" kind="presentation" identifier="segueSubmit" id="2W6-wP-INC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="depthTextField" destination="Qih-xm-xYu" id="7Es-9P-Tec"/>
+                        <outlet property="descriptionTextField" destination="Ybp-Ig-ABa" id="YLT-aQ-RY6"/>
+                        <outlet property="feetMesuramentControl" destination="Aa6-ND-qyf" id="yjm-Cv-xEQ"/>
+                        <outlet property="salinityMesuramentControl" destination="yio-2F-4DO" id="jE8-aF-zdm"/>
+                        <outlet property="salinityTextField" destination="H81-ZF-NJW" id="LMd-zd-RcF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-487" y="83"/>
         </scene>
         <!--Submission View Controller-->
         <scene sceneID="PrG-5p-pf3">
@@ -126,7 +133,7 @@
                                 <color key="textColor" red="0.027450980390000001" green="0.1058823529" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbF-WX-qq7">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbF-WX-qq7">
                                 <rect key="frame" x="22" y="533" width="330" height="63"/>
                                 <color key="backgroundColor" red="0.027450980390000001" green="0.1058823529" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -137,25 +144,51 @@
                                     <color key="titleColor" red="0.99607843137254903" green="0.80000000000000004" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="nas-Bs-Lqf"/>
+                                    <action selector="enterButton:" destination="tC8-IX-cW1" eventType="touchUpInside" id="iL6-yy-D9I"/>
                                 </connections>
                             </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcF-Eu-bEN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8iy-9e-h1Q">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Qaz-t7-D8K">
+                                            <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                </view>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YbF-WX-qq7" firstAttribute="leading" secondItem="Z9W-Qb-U0e" secondAttribute="leading" constant="22" id="ADH-G6-hWJ"/>
                             <constraint firstItem="Z9W-Qb-U0e" firstAttribute="bottom" secondItem="YbF-WX-qq7" secondAttribute="bottom" constant="71" id="BoJ-Re-nbh"/>
                             <constraint firstItem="Z9W-Qb-U0e" firstAttribute="trailing" secondItem="YbF-WX-qq7" secondAttribute="trailing" constant="23" id="JLu-ME-6zy"/>
+                            <constraint firstItem="YcF-Eu-bEN" firstAttribute="leading" secondItem="Z9W-Qb-U0e" secondAttribute="leading" id="MVk-Nd-2fs"/>
+                            <constraint firstItem="YcF-Eu-bEN" firstAttribute="top" secondItem="OQC-7d-H3m" secondAttribute="top" id="RDa-Im-WDt"/>
+                            <constraint firstItem="YcF-Eu-bEN" firstAttribute="trailing" secondItem="Z9W-Qb-U0e" secondAttribute="trailing" id="ZIa-GR-hgd"/>
                             <constraint firstItem="Z9W-Qb-U0e" firstAttribute="trailing" secondItem="IUz-Ku-81y" secondAttribute="trailing" constant="23" id="dLa-WM-v4V"/>
                             <constraint firstItem="IUz-Ku-81y" firstAttribute="top" secondItem="Z9W-Qb-U0e" secondAttribute="top" constant="106" id="e4o-ow-Tj4"/>
                             <constraint firstItem="IUz-Ku-81y" firstAttribute="leading" secondItem="Z9W-Qb-U0e" secondAttribute="leading" constant="22" id="po5-Bq-A1E"/>
+                            <constraint firstItem="YcF-Eu-bEN" firstAttribute="bottom" secondItem="Z9W-Qb-U0e" secondAttribute="bottom" id="s1Y-2s-pKc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z9W-Qb-U0e"/>
                     </view>
+                    <connections>
+                        <outlet property="blur" destination="YcF-Eu-bEN" id="tv3-oo-PyM"/>
+                        <outlet property="enterAnotherButton" destination="YbF-WX-qq7" id="IDy-3P-DmD"/>
+                        <outlet property="spinner" destination="Qaz-t7-D8K" id="wxK-pY-fXc"/>
+                        <outlet property="statusLabel" destination="IUz-Ku-81y" id="jz7-cl-a1T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgc-rI-DNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925.60000000000002" y="133.5832083958021"/>
+            <point key="canvasLocation" x="405.60000000000002" y="83.208395802098963"/>
         </scene>
     </scenes>
 </document>
