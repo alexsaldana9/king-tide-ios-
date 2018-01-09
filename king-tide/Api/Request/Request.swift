@@ -27,7 +27,7 @@ class PostRequest {
     config.allowsCellularAccess = true
     config.waitsForConnectivity = true
     config.timeoutIntervalForRequest = 40
-    config.httpAdditionalHeaders = ["apikey" : "supersecret"]
+    config.httpAdditionalHeaders = ["apikey" : ApiKey.key]
     let defaultSession = URLSession(configuration: config)
 
 

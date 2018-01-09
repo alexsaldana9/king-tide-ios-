@@ -15,6 +15,7 @@
 		1C888A0F1FC47FC200A54FA2 /* king_tideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A0E1FC47FC200A54FA2 /* king_tideTests.swift */; };
 		1C888A1A1FC47FC200A54FA2 /* king_tideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */; };
 		1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */; };
+		A7BFB9AB2004701D00CC4F46 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */; };
 		A7D619BD1FDC2DD90045AD05 /* TideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BC1FDC2DD90045AD05 /* TideModel.swift */; };
 		A7D619C01FDC371A0045AD05 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BF1FDC371A0045AD05 /* Request.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = king_tideUITests.swift; sourceTree = "<group>"; };
 		1C888A1B1FC47FC200A54FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
+		A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		A7D619BC1FDC2DD90045AD05 /* TideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideModel.swift; sourceTree = "<group>"; };
 		A7D619BF1FDC371A0045AD05 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D619BF1FDC371A0045AD05 /* Request.swift */,
+				A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				A7D619C01FDC371A0045AD05 /* Request.swift in Sources */,
 				1C8889FA1FC47FC200A54FA2 /* AppDelegate.swift in Sources */,
 				1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */,
+				A7BFB9AB2004701D00CC4F46 /* ApiKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
