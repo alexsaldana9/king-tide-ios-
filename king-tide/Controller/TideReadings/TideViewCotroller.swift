@@ -48,9 +48,15 @@ class TideViewCotroller: UIViewController {
     print("\(depth) \(salinity) \(description) \(mesurament)\(mesuramentSalinity)")
 
 
-    let para = ["depth":"\(depth)", "salinity":"\(salinity)"
-      ,"units_depth":mesurament, "units_salinity":mesuramentSalinity,
-       "description":description] as [String : String]
+    let para = [
+        "depth": "\(depth)",
+        "salinity": "\(salinity)",
+        "units_depth": mesurament,
+        "units_salinity": mesuramentSalinity,
+        "latitude": "13",
+        "longitude": "45",
+        "description": description
+        ] as [String : String]
 
     DispatchQueue.main.async {
       PostRequest.post(param: para)
