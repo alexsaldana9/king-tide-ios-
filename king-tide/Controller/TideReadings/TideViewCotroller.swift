@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TideViewCotroller: UIViewController {
 
   @IBOutlet weak var depthTextField: UITextField!
   @IBOutlet weak var salinityTextField: UITextField!
@@ -47,13 +47,15 @@ class ViewController: UIViewController {
 
     print("\(depth) \(salinity) \(description) \(mesurament)\(mesuramentSalinity)")
 
-    let apiKey = "llave2"
 
-    let para = ["depth":depth, "salinity":salinity
+    let para = ["depth":"\(depth)", "salinity":"\(salinity)"
       ,"units_depth":mesurament, "units_salinity":mesuramentSalinity,
-       "description":description, "apiKey":apiKey] as [String : Any]
+       "description":description] as [String : String]
 
-    PostRequest.post(param: para)
+    DispatchQueue.main.async {
+      PostRequest.post(param: para)
+    }
+
 
   }
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C8889FA1FC47FC200A54FA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8889F91FC47FC200A54FA2 /* AppDelegate.swift */; };
-		1C8889FC1FC47FC200A54FA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8889FB1FC47FC200A54FA2 /* ViewController.swift */; };
+		1C8889FC1FC47FC200A54FA2 /* TideViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8889FB1FC47FC200A54FA2 /* TideViewCotroller.swift */; };
 		1C8889FF1FC47FC200A54FA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8889FD1FC47FC200A54FA2 /* Main.storyboard */; };
 		1C888A011FC47FC200A54FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C888A001FC47FC200A54FA2 /* Assets.xcassets */; };
 		1C888A041FC47FC200A54FA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C888A021FC47FC200A54FA2 /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		1C8889F61FC47FC200A54FA2 /* king-tide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "king-tide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8889F91FC47FC200A54FA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C8889FB1FC47FC200A54FA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C8889FB1FC47FC200A54FA2 /* TideViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideViewCotroller.swift; sourceTree = "<group>"; };
 		1C8889FE1FC47FC200A54FA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C888A001FC47FC200A54FA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C888A031FC47FC200A54FA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,11 +106,9 @@
 				1C8889F91FC47FC200A54FA2 /* AppDelegate.swift */,
 				A7D619BE1FDC2F290045AD05 /* Api */,
 				A7D619BB1FDC2DA20045AD05 /* Controller */,
-				A7D619BA1FDC2D9B0045AD05 /* View */,
+				A7D619BA1FDC2D9B0045AD05 /* Storyboard */,
 				A7D619B91FDC2D900045AD05 /* Model */,
-				1C8889FD1FC47FC200A54FA2 /* Main.storyboard */,
 				1C888A001FC47FC200A54FA2 /* Assets.xcassets */,
-				1C888A021FC47FC200A54FA2 /* LaunchScreen.storyboard */,
 				1C888A051FC47FC200A54FA2 /* Info.plist */,
 			);
 			path = "king-tide";
@@ -142,18 +140,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A7D619BA1FDC2D9B0045AD05 /* View */ = {
+		A7D619BA1FDC2D9B0045AD05 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				1C888A021FC47FC200A54FA2 /* LaunchScreen.storyboard */,
+				1C8889FD1FC47FC200A54FA2 /* Main.storyboard */,
 			);
-			path = View;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		A7D619BB1FDC2DA20045AD05 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1C8889FB1FC47FC200A54FA2 /* ViewController.swift */,
-				1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */,
+				A7FE1CC31FE56E8D00F07703 /* TideReadings */,
+				A7FE1CC51FE56F3800F07703 /* Submit */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,9 +161,33 @@
 		A7D619BE1FDC2F290045AD05 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				A7D619BF1FDC371A0045AD05 /* Request.swift */,
+				A7FE1CC61FE5703B00F07703 /* Request */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		A7FE1CC31FE56E8D00F07703 /* TideReadings */ = {
+			isa = PBXGroup;
+			children = (
+				1C8889FB1FC47FC200A54FA2 /* TideViewCotroller.swift */,
+			);
+			path = TideReadings;
+			sourceTree = "<group>";
+		};
+		A7FE1CC51FE56F3800F07703 /* Submit */ = {
+			isa = PBXGroup;
+			children = (
+				1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */,
+			);
+			path = Submit;
+			sourceTree = "<group>";
+		};
+		A7FE1CC61FE5703B00F07703 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A7D619BF1FDC371A0045AD05 /* Request.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C8889FC1FC47FC200A54FA2 /* ViewController.swift in Sources */,
+				1C8889FC1FC47FC200A54FA2 /* TideViewCotroller.swift in Sources */,
 				A7D619BD1FDC2DD90045AD05 /* TideModel.swift in Sources */,
 				A7D619C01FDC371A0045AD05 /* Request.swift in Sources */,
 				1C8889FA1FC47FC200A54FA2 /* AppDelegate.swift in Sources */,
