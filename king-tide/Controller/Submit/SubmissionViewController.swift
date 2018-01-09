@@ -35,7 +35,6 @@ class SubmissionViewController: UIViewController {
         self.statusLabel.text = "Something went wrong"
         self.enterAnotherButton.attributedTitle(for: .normal)
         self.enterAnotherButton.titleLabel?.text = "Try Again!"
-        //self.enterAnotherButton.contentMode = .center
         self.spinner.stopAnimating()
         self.blur.isHidden = true
         return
@@ -48,10 +47,7 @@ class SubmissionViewController: UIViewController {
       }
     }
 
-
-
   }
-
 
 
 }

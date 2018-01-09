@@ -72,11 +72,9 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
     let mesuramentSalinity = salinityMesuramentControl
       .isEnabledForSegment(at: 0) ? "ppm": "ppt"
 
-    print("\(depth) \(salinity) \(description) \(mesurament)\(mesuramentSalinity)")
-
     let latitude = location?.coordinate.latitude ?? 0
     let longitude = location?.coordinate.longitude ?? 0
-    let para = [
+    let param = [
       "depth": "\(depth)",
       "salinity": "\(salinity)",
       "units_depth": mesurament,
@@ -87,7 +85,7 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
       ] as [String : String]
 
     DispatchQueue.main.async {
-      PostRequest.post(param: para)
+      ApiRequest.post(param: param)
     }
 
   }
