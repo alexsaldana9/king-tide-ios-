@@ -19,9 +19,9 @@ class SubmissionViewController: UIViewController {
     super.viewDidLoad()
 
     self.spinner.startAnimating()
-    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.postSuccess, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.Readings.success, object: nil)
 
-    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.postFail, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.Readings.fail, object: nil)
   }
 
   @IBAction func enterButton(_ sender: Any) {
@@ -30,7 +30,7 @@ class SubmissionViewController: UIViewController {
 
   @objc func stopSpinner(notification: Notification) {
 
-    if notification.name == Notification.Name.postFail {
+    if notification.name == Notification.Name.Readings.fail {
       DispatchQueue.main.async {
         self.statusLabel.text = "Something went wrong"
         self.enterAnotherButton.attributedTitle(for: .normal)
@@ -52,6 +52,13 @@ class SubmissionViewController: UIViewController {
 
 }
 extension Notification.Name {
-  static let postSuccess = Notification.Name("postSuccess")
-  static let postFail = Notification.Name("postFail")
+  struct Readings {
+    static let success = Notification.Name("successPost")
+    static let fail = Notification.Name("fail")
+  }
+  struct Photo {
+    static let success = Notification.Name("successUpload")
+    static let fail = Notification.Name("fail")
+  }
+
 }

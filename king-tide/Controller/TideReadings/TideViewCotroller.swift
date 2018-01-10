@@ -28,7 +28,7 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
 
     NotificationCenter.default.addObserver(self, selector:
       #selector(self.clear(notification:)), name:
-      Notification.Name.postSuccess, object: nil)
+      Notification.Name.Readings.success, object: nil)
 
     locationManager.requestWhenInUseAuthorization()
 
@@ -40,16 +40,27 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
   }
 
   @IBAction func takePicButton(_ sender: UIButton) {
-    let alertViewController = UIAlertController(title: "", message: "Choose your option", preferredStyle: .actionSheet)
-    let camera = UIAlertAction(title: "Camera", style: .default, handler: { (alert) in
-      self.openCamera()
+    let alertViewController = UIAlertController(title: "Title",
+                                                message: "Choose your option",
+                                                preferredStyle: .actionSheet)
+
+    let camera = UIAlertAction(title: "Camera", style: .default,
+                               handler: { (alert) in
+                                self.openCamera()
     })
-    let gallery = UIAlertAction(title: "Gallery", style: .default) { (alert) in
-      self.openGallery()
-    }
+    let gallery = UIAlertAction(title: "Gallery", style: .default,
+                                handler: { (alert) in
+                                  self.openGallery()
+    })
     let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alert) in
 
     }
+
+    alertViewController.addAction(camera)
+    alertViewController.addAction(gallery)
+    alertViewController.addAction(cancel)
+    self.present(alertViewController, animated: true, completion: nil)
+    
   }
   func openCamera() {
     guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -59,8 +70,7 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
 
     imagePicker.sourceType = .camera
     imagePicker.cameraDevice = .rear
-    imagePicker.mediaTypes = UIImagePickerController
-      .availableMediaTypes(for:.camera)!
+    imagePicker.cameraCaptureMode = .photo
     imagePicker.delegate = self
 
     present(imagePicker, animated: true)
@@ -127,7 +137,7 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
       ] as [String : String]
 
     DispatchQueue.main.async {
-      ApiRequest.post(param: param)
+      ApiRequest().post(param: param)
     }
 
   }
@@ -135,16 +145,17 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
 }
 extension TideViewCotroller: UIImagePickerControllerDelegate,
                              UINavigationControllerDelegate {
+  
   func imagePickerController(_ picker: UIImagePickerController,
                              didFinishPickingMediaWithInfo info: [String : Any]) {
     defer {
       picker.dismiss(animated: true)
     }
 
-    print(info)
-    // get the image
-    guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-      else { return }
+    guard let image = info[UIImagePickerControllerOriginalImage]
+      as? UIImage else { return }
+    let imageData:Data = UIImagePNGRepresentation(image)!
+    let imageStr = imageData.base64EncodedString()
   }
 
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
