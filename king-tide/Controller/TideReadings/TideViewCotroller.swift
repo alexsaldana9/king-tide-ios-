@@ -18,6 +18,7 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
   @IBOutlet weak var feetMesuramentControl: UISegmentedControl!
   @IBOutlet weak var salinityMesuramentControl: UISegmentedControl!
 
+  let imagePicker = UIImagePickerController()
 
   let locationManager = CLLocationManager()
   var location: CLLocation?
@@ -25,7 +26,9 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    NotificationCenter.default.addObserver(self, selector: #selector(self.clear(notification:)), name: Notification.Name.postSuccess, object: nil)
+    NotificationCenter.default.addObserver(self, selector:
+      #selector(self.clear(notification:)), name:
+      Notification.Name.postSuccess, object: nil)
 
     locationManager.requestWhenInUseAuthorization()
 
@@ -35,13 +38,53 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
       locationManager.startUpdatingLocation()
     }
   }
-  // Print out the location to the console
-  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+  @IBAction func takePicButton(_ sender: UIButton) {
+    let alertViewController = UIAlertController(title: "", message: "Choose your option", preferredStyle: .actionSheet)
+    let camera = UIAlertAction(title: "Camera", style: .default, handler: { (alert) in
+      self.openCamera()
+    })
+    let gallery = UIAlertAction(title: "Gallery", style: .default) { (alert) in
+      self.openGallery()
+    }
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alert) in
+
+    }
+  }
+  func openCamera() {
+    guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+      print("This device doesn't have a camera.")
+      return
+    }
+
+    imagePicker.sourceType = .camera
+    imagePicker.cameraDevice = .rear
+    imagePicker.mediaTypes = UIImagePickerController
+      .availableMediaTypes(for:.camera)!
+    imagePicker.delegate = self
+
+    present(imagePicker, animated: true)
+  }
+
+  func openGallery() {
+    guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+      print("can't open photo library")
+      return
+    }
+
+    imagePicker.sourceType = .photoLibrary
+    imagePicker.delegate = self
+
+    present(imagePicker, animated: true)
+  }
+
+  func locationManager(_ manager: CLLocationManager,
+                       didUpdateLocations locations: [CLLocation]) {
     self.location = locations.first
   }
 
-  // If we have been deined access give the user the option to change it
-  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+  func locationManager(_ manager: CLLocationManager,
+                       didChangeAuthorization status: CLAuthorizationStatus) {
     if(status == CLAuthorizationStatus.denied) {
       //show map so the user can pin location on the map
     }
@@ -57,7 +100,6 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
     }
 
   }
-
 
   @IBAction func submitBtn(_ sender: Any) {
 
@@ -90,5 +132,24 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
 
   }
 
+}
+extension TideViewCotroller: UIImagePickerControllerDelegate,
+                             UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController,
+                             didFinishPickingMediaWithInfo info: [String : Any]) {
+    defer {
+      picker.dismiss(animated: true)
+    }
+
+    print(info)
+    // get the image
+    guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+      else { return }
+  }
+
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    defer { picker.dismiss(animated: true) }
+    print("did cancel")
+  }
 }
 

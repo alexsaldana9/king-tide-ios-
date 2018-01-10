@@ -11,6 +11,13 @@ import Foundation
 
 class ApiRequest {
 
+
+
+  func uploadPhoto() {
+    
+  }
+
+
   private static  func encodeParameters(parameters: [String: String]) -> String {
     let parameterArray = parameters.map { (arg) -> String in
 
