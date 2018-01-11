@@ -29,8 +29,14 @@ class ApiRequest {
       NotificationCenter.default.post(name: notification.fail, object: nil)
       return
     }
+
+//    let jsonStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+//    print(jsonStr)
+
     if let response = response as? HTTPURLResponse {
       if response.statusCode == 200 {
+        let tideModel = TideResponse.init(data: data)
+        print(tideModel)
         NotificationCenter.default.post(name: notification.success, object: nil)
       }
 
