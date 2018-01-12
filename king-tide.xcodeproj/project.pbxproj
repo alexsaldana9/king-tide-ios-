@@ -18,6 +18,8 @@
 		A7BFB9AB2004701D00CC4F46 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */; };
 		A7D619BD1FDC2DD90045AD05 /* TideResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BC1FDC2DD90045AD05 /* TideResponse.swift */; };
 		A7D619C01FDC371A0045AD05 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BF1FDC371A0045AD05 /* Request.swift */; };
+		A7E1AA6D200932E2004DD9C1 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1AA6C200932E2004DD9C1 /* MapLocation.swift */; };
+		A7E1AA6F200964AC004DD9C1 /* TakePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1AA6E200964AC004DD9C1 /* TakePicture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		A7D619BC1FDC2DD90045AD05 /* TideResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideResponse.swift; sourceTree = "<group>"; };
 		A7D619BF1FDC371A0045AD05 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		A7E1AA6C200932E2004DD9C1 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
+		A7E1AA6E200964AC004DD9C1 /* TakePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePicture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +175,9 @@
 		A7FE1CC31FE56E8D00F07703 /* TideReadings */ = {
 			isa = PBXGroup;
 			children = (
+				A7E1AA6C200932E2004DD9C1 /* MapLocation.swift */,
 				1C8889FB1FC47FC200A54FA2 /* TideViewCotroller.swift */,
+				A7E1AA6E200964AC004DD9C1 /* TakePicture.swift */,
 			);
 			path = TideReadings;
 			sourceTree = "<group>";
@@ -327,10 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7E1AA6D200932E2004DD9C1 /* MapLocation.swift in Sources */,
 				1C8889FC1FC47FC200A54FA2 /* TideViewCotroller.swift in Sources */,
 				A7D619BD1FDC2DD90045AD05 /* TideResponse.swift in Sources */,
 				A7D619C01FDC371A0045AD05 /* Request.swift in Sources */,
 				1C8889FA1FC47FC200A54FA2 /* AppDelegate.swift in Sources */,
+				A7E1AA6F200964AC004DD9C1 /* TakePicture.swift in Sources */,
 				1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */,
 				A7BFB9AB2004701D00CC4F46 /* ApiKey.swift in Sources */,
 			);

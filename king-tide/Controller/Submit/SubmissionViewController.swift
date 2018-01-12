@@ -25,7 +25,9 @@ class SubmissionViewController: UIViewController {
   }
 
   @IBAction func enterButton(_ sender: Any) {
-    self.dismiss(animated: true, completion: nil)
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let controller = storyboard.instantiateInitialViewController() as! UINavigationController
+    self.present(controller, animated: true)
   }
 
   @objc func stopSpinner(notification: Notification) {

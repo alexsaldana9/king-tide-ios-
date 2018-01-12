@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="neB-tn-hcf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,7 +71,7 @@
                                 <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tide Readings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1T4-bX-dLQ">
                                 <rect key="frame" x="104" y="20" width="158" height="43"/>
@@ -97,21 +98,13 @@
                                 </state>
                                 <connections>
                                     <action selector="submitBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2wS-3h-koz"/>
-                                    <segue destination="tC8-IX-cW1" kind="presentation" identifier="segueSubmit" id="2W6-wP-INC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mau-7O-iRA">
-                                <rect key="frame" x="271" y="312" width="84" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take picture"/>
-                                <connections>
-                                    <action selector="takePicButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9hP-1u-Lpb"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jg3-w5-bHQ"/>
                     <connections>
                         <outlet property="depthTextField" destination="Qih-xm-xYu" id="7Es-9P-Tec"/>
                         <outlet property="descriptionTextField" destination="Ybp-Ig-ABa" id="YLT-aQ-RY6"/>
@@ -122,7 +115,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-487" y="83"/>
+            <point key="canvasLocation" x="-841" y="90"/>
+        </scene>
+        <!--Map Location-->
+        <scene sceneID="gaq-ch-ADb">
+            <objects>
+                <viewController storyboardIdentifier="MapLocation" id="EHb-77-hk2" customClass="MapLocation" customModule="king_tide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FFu-1v-Ssv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgg-60-JMG">
+                                <rect key="frame" x="22" y="573" width="330" height="62"/>
+                                <color key="backgroundColor" red="0.029397035017609596" green="0.10781163722276688" blue="0.25073319673538208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="2yD-Ne-oFK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" red="0.99575787780000002" green="0.80079311129999997" blue="0.1358260214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ConfirmTapped:" destination="EHb-77-hk2" eventType="touchUpInside" id="lVR-5y-DD8"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMJ-5z-Und">
+                                <rect key="frame" x="0.0" y="20" width="375" height="515"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bgg-60-JMG" firstAttribute="leading" secondItem="saN-yq-tbO" secondAttribute="leading" constant="22" id="EgW-F7-k6j"/>
+                            <constraint firstItem="PMJ-5z-Und" firstAttribute="top" secondItem="saN-yq-tbO" secondAttribute="top" id="I3H-pw-6kO"/>
+                            <constraint firstItem="PMJ-5z-Und" firstAttribute="leading" secondItem="saN-yq-tbO" secondAttribute="leading" id="Smg-G7-eaw"/>
+                            <constraint firstItem="saN-yq-tbO" firstAttribute="trailing" secondItem="bgg-60-JMG" secondAttribute="trailing" constant="23" id="UON-St-csW"/>
+                            <constraint firstItem="saN-yq-tbO" firstAttribute="trailing" secondItem="PMJ-5z-Und" secondAttribute="trailing" id="Uam-tw-U5g"/>
+                            <constraint firstItem="saN-yq-tbO" firstAttribute="bottom" secondItem="bgg-60-JMG" secondAttribute="bottom" constant="32" id="X7O-Qk-s3r"/>
+                            <constraint firstItem="bgg-60-JMG" firstAttribute="top" secondItem="PMJ-5z-Und" secondAttribute="bottom" constant="38" id="p4h-aM-OYc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="saN-yq-tbO"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="bgg-60-JMG" id="MHq-3J-qhL"/>
+                        <outlet property="map" destination="PMJ-5z-Und" id="f5a-Yj-mD6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRi-gd-jVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388" y="-619.34032983508246"/>
+        </scene>
+        <!--Take Picture-->
+        <scene sceneID="fvp-B9-tGs">
+            <objects>
+                <viewController storyboardIdentifier="TakePicture" id="acZ-Wz-V63" customClass="TakePicture" customModule="king_tide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96R-sr-c2u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enO-m0-XdY">
+                                <rect key="frame" x="22" y="536" width="330" height="63"/>
+                                <color key="backgroundColor" red="0.027450980390000001" green="0.1058823529" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="sKe-Rw-1rJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicTapped:" destination="acZ-Wz-V63" eventType="touchUpInside" id="rIU-Tu-Itf"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tideIMage" translatesAutoresizingMaskIntoConstraints="NO" id="9Rz-EZ-WRd">
+                                <rect key="frame" x="16" y="99" width="336" height="363"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions for how to take the picture for category 1. Maybe a Sample photo 🤣 🤣" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0W-DT-azS">
+                                <rect key="frame" x="16" y="20" width="336" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="yDA-RQ-VrK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Rz-EZ-WRd" firstAttribute="trailing" secondItem="enO-m0-XdY" secondAttribute="trailing" id="DNt-q3-Gg0"/>
+                            <constraint firstItem="9Rz-EZ-WRd" firstAttribute="leading" secondItem="96R-sr-c2u" secondAttribute="leadingMargin" id="EBD-Rh-mAO"/>
+                            <constraint firstItem="bjR-ML-hsK" firstAttribute="trailing" secondItem="9Rz-EZ-WRd" secondAttribute="trailing" constant="23" id="NMM-15-SUw"/>
+                            <constraint firstItem="bjR-ML-hsK" firstAttribute="bottom" secondItem="enO-m0-XdY" secondAttribute="bottom" constant="68" id="Pl7-8u-1AP"/>
+                            <constraint firstItem="9Rz-EZ-WRd" firstAttribute="top" secondItem="J0W-DT-azS" secondAttribute="bottom" constant="8" symbolic="YES" id="Wh2-C1-1uv"/>
+                            <constraint firstItem="J0W-DT-azS" firstAttribute="trailing" secondItem="9Rz-EZ-WRd" secondAttribute="trailing" id="gFO-FE-Y4k"/>
+                            <constraint firstItem="J0W-DT-azS" firstAttribute="top" secondItem="bjR-ML-hsK" secondAttribute="top" id="j7M-df-TND"/>
+                            <constraint firstItem="enO-m0-XdY" firstAttribute="top" secondItem="9Rz-EZ-WRd" secondAttribute="bottom" constant="74" id="qCt-uP-qAy"/>
+                            <constraint firstItem="J0W-DT-azS" firstAttribute="leading" secondItem="bjR-ML-hsK" secondAttribute="leading" constant="16" id="si5-O2-jHQ"/>
+                            <constraint firstItem="enO-m0-XdY" firstAttribute="centerX" secondItem="96R-sr-c2u" secondAttribute="centerX" id="zRw-pH-y0J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bjR-ML-hsK"/>
+                    </view>
+                    <connections>
+                        <outlet property="takePicButton" destination="enO-m0-XdY" id="4Wx-QY-FYt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fLN-wA-GYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="89.505247376311857"/>
         </scene>
         <!--Submission View Controller-->
         <scene sceneID="PrG-5p-pf3">
@@ -194,7 +292,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgc-rI-DNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405.60000000000002" y="83.208395802098963"/>
+            <point key="canvasLocation" x="708" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R4b-jp-ZlI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="neB-tn-hcf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LnJ-9Y-Daz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Gzx-9B-rLE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAq-U0-mgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1551" y="72"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tideIMage" width="560" height="416"/>
+    </resources>
 </document>
