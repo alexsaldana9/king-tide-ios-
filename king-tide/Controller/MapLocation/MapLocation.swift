@@ -35,7 +35,7 @@ class MapLocation: UIViewController, MKMapViewDelegate {
   }
   @IBAction func ConfirmTapped(_ sender: UIButton) {
     
-    ApiRequest().post(param: param)
+    PostReading().post(param: param)
 
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let controller = storyboard.instantiateViewController(

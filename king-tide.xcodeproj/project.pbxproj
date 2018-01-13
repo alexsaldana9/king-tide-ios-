@@ -119,6 +119,7 @@
 		1C8889F81FC47FC200A54FA2 /* king-tide */ = {
 			isa = PBXGroup;
 			children = (
+				1C888A051FC47FC200A54FA2 /* Info.plist */,
 				A7FDF7D2200AC3B700901D5F /* Other */,
 				A733405A200ABE3F00485680 /* Services */,
 				A7334055200AB3FF00485680 /* Extensions */,
@@ -238,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				1C8889F91FC47FC200A54FA2 /* AppDelegate.swift */,
-				1C888A051FC47FC200A54FA2 /* Info.plist */,
 			);
 			path = Other;
 			sourceTree = "<group>";

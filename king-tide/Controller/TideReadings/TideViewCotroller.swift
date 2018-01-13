@@ -64,7 +64,7 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
     guard let param = getParam() else { return }
 
     if locationService.isAuthorized() {
-      ApiRequest().post(param: param)
+      PostReading().post(param: param)
 
       guard let controller = storyboard?.instantiateViewController(
         withClass: TakePicture.self) else { return }
