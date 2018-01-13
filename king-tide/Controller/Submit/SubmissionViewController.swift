@@ -19,14 +19,13 @@ class SubmissionViewController: UIViewController {
     super.viewDidLoad()
 
     self.spinner.startAnimating()
-    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.Readings.success, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.Photo.success, object: nil)
 
-    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.Readings.fail, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.stopSpinner(notification:)), name: Notification.Name.Photo.fail, object: nil)
   }
 
   @IBAction func enterButton(_ sender: Any) {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let controller = storyboard.instantiateInitialViewController() as! UINavigationController
+    let controller = storyboard?.instantiateInitialViewController() as! UINavigationController
     self.present(controller, animated: true)
   }
 

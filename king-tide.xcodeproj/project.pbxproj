@@ -15,9 +15,14 @@
 		1C888A0F1FC47FC200A54FA2 /* king_tideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A0E1FC47FC200A54FA2 /* king_tideTests.swift */; };
 		1C888A1A1FC47FC200A54FA2 /* king_tideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */; };
 		1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */; };
+		A7334050200AA4F600485680 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = A733404F200AA4F600485680 /* Base.swift */; };
+		A7334052200AA7F000485680 /* PostReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7334051200AA7F000485680 /* PostReading.swift */; };
+		A7334054200AA80800485680 /* PostPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7334053200AA80800485680 /* PostPhoto.swift */; };
+		A7334057200AB42900485680 /* StoryboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7334056200AB42900485680 /* StoryboardExt.swift */; };
+		A7334059200AB7AA00485680 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7334058200AB7AA00485680 /* LocationManager.swift */; };
 		A7BFB9AB2004701D00CC4F46 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */; };
 		A7D619BD1FDC2DD90045AD05 /* TideResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BC1FDC2DD90045AD05 /* TideResponse.swift */; };
-		A7D619C01FDC371A0045AD05 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D619BF1FDC371A0045AD05 /* Request.swift */; };
+		A7E064AE200A8E9A00007419 /* ReadingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E064AD200A8E9A00007419 /* ReadingResponse.swift */; };
 		A7E1AA6D200932E2004DD9C1 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1AA6C200932E2004DD9C1 /* MapLocation.swift */; };
 		A7E1AA6F200964AC004DD9C1 /* TakePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1AA6E200964AC004DD9C1 /* TakePicture.swift */; };
 /* End PBXBuildFile section */
@@ -54,9 +59,14 @@
 		1C888A191FC47FC200A54FA2 /* king_tideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = king_tideUITests.swift; sourceTree = "<group>"; };
 		1C888A1B1FC47FC200A54FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C888A271FC4809000A54FA2 /* SubmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
+		A733404F200AA4F600485680 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		A7334051200AA7F000485680 /* PostReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReading.swift; sourceTree = "<group>"; };
+		A7334053200AA80800485680 /* PostPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhoto.swift; sourceTree = "<group>"; };
+		A7334056200AB42900485680 /* StoryboardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExt.swift; sourceTree = "<group>"; };
+		A7334058200AB7AA00485680 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		A7D619BC1FDC2DD90045AD05 /* TideResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideResponse.swift; sourceTree = "<group>"; };
-		A7D619BF1FDC371A0045AD05 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		A7E064AD200A8E9A00007419 /* ReadingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingResponse.swift; sourceTree = "<group>"; };
 		A7E1AA6C200932E2004DD9C1 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		A7E1AA6E200964AC004DD9C1 /* TakePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePicture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,13 +119,14 @@
 		1C8889F81FC47FC200A54FA2 /* king-tide */ = {
 			isa = PBXGroup;
 			children = (
-				1C8889F91FC47FC200A54FA2 /* AppDelegate.swift */,
+				A7FDF7D2200AC3B700901D5F /* Other */,
+				A733405A200ABE3F00485680 /* Services */,
+				A7334055200AB3FF00485680 /* Extensions */,
 				A7D619BE1FDC2F290045AD05 /* Api */,
 				A7D619BB1FDC2DA20045AD05 /* Controller */,
 				A7D619BA1FDC2D9B0045AD05 /* Storyboard */,
 				A7D619B91FDC2D900045AD05 /* Model */,
-				1C888A001FC47FC200A54FA2 /* Assets.xcassets */,
-				1C888A051FC47FC200A54FA2 /* Info.plist */,
+				A7FDF7D1200AC39D00901D5F /* Resources */,
 			);
 			path = "king-tide";
 			sourceTree = "<group>";
@@ -138,6 +149,22 @@
 			path = "king-tideUITests";
 			sourceTree = "<group>";
 		};
+		A7334055200AB3FF00485680 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A7334056200AB42900485680 /* StoryboardExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A733405A200ABE3F00485680 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A7334058200AB7AA00485680 /* LocationManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A7D619B91FDC2D900045AD05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +185,8 @@
 		A7D619BB1FDC2DA20045AD05 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A7E064AB200A8C1200007419 /* TakePicture */,
+				A7E064AA200A8BDC00007419 /* MapLocation */,
 				A7FE1CC31FE56E8D00F07703 /* TideReadings */,
 				A7FE1CC51FE56F3800F07703 /* Submit */,
 			);
@@ -167,17 +196,57 @@
 		A7D619BE1FDC2F290045AD05 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				A7E064AC200A8E2700007419 /* Response */,
 				A7FE1CC61FE5703B00F07703 /* Request */,
 			);
 			path = Api;
 			sourceTree = "<group>";
 		};
-		A7FE1CC31FE56E8D00F07703 /* TideReadings */ = {
+		A7E064AA200A8BDC00007419 /* MapLocation */ = {
 			isa = PBXGroup;
 			children = (
 				A7E1AA6C200932E2004DD9C1 /* MapLocation.swift */,
-				1C8889FB1FC47FC200A54FA2 /* TideViewCotroller.swift */,
+			);
+			path = MapLocation;
+			sourceTree = "<group>";
+		};
+		A7E064AB200A8C1200007419 /* TakePicture */ = {
+			isa = PBXGroup;
+			children = (
 				A7E1AA6E200964AC004DD9C1 /* TakePicture.swift */,
+			);
+			path = TakePicture;
+			sourceTree = "<group>";
+		};
+		A7E064AC200A8E2700007419 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A7E064AD200A8E9A00007419 /* ReadingResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		A7FDF7D1200AC39D00901D5F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1C888A001FC47FC200A54FA2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7FDF7D2200AC3B700901D5F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1C8889F91FC47FC200A54FA2 /* AppDelegate.swift */,
+				1C888A051FC47FC200A54FA2 /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		A7FE1CC31FE56E8D00F07703 /* TideReadings */ = {
+			isa = PBXGroup;
+			children = (
+				1C8889FB1FC47FC200A54FA2 /* TideViewCotroller.swift */,
 			);
 			path = TideReadings;
 			sourceTree = "<group>";
@@ -193,7 +262,9 @@
 		A7FE1CC61FE5703B00F07703 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				A7D619BF1FDC371A0045AD05 /* Request.swift */,
+				A7334051200AA7F000485680 /* PostReading.swift */,
+				A7334053200AA80800485680 /* PostPhoto.swift */,
+				A733404F200AA4F600485680 /* Base.swift */,
 				A7BFB9AA2004701D00CC4F46 /* ApiKey.swift */,
 			);
 			path = Request;
@@ -334,13 +405,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E1AA6D200932E2004DD9C1 /* MapLocation.swift in Sources */,
+				A7334059200AB7AA00485680 /* LocationManager.swift in Sources */,
 				1C8889FC1FC47FC200A54FA2 /* TideViewCotroller.swift in Sources */,
 				A7D619BD1FDC2DD90045AD05 /* TideResponse.swift in Sources */,
-				A7D619C01FDC371A0045AD05 /* Request.swift in Sources */,
+				A7334052200AA7F000485680 /* PostReading.swift in Sources */,
 				1C8889FA1FC47FC200A54FA2 /* AppDelegate.swift in Sources */,
 				A7E1AA6F200964AC004DD9C1 /* TakePicture.swift in Sources */,
+				A7334054200AA80800485680 /* PostPhoto.swift in Sources */,
+				A7E064AE200A8E9A00007419 /* ReadingResponse.swift in Sources */,
 				1C888A281FC4809000A54FA2 /* SubmissionViewController.swift in Sources */,
 				A7BFB9AB2004701D00CC4F46 /* ApiKey.swift in Sources */,
+				A7334057200AB42900485680 /* StoryboardExt.swift in Sources */,
+				A7334050200AA4F600485680 /* Base.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

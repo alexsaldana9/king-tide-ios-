@@ -62,7 +62,6 @@ class TakePicture: UIViewController {
   }
 
 }
-
 extension TakePicture: UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
@@ -70,19 +69,23 @@ UINavigationControllerDelegate {
                                    didFinishPickingMediaWithInfo info: [String : Any]) {
     defer {
       picker.dismiss(animated: true)
+      let controller = storyboard?.instantiateViewController(withClass: SubmissionViewController.self)
+      self.present(controller!, animated: true, completion: nil)
     }
 
     guard let image = info[UIImagePickerControllerOriginalImage]
       as? UIImage else { return }
     let imageData:Data = UIImageJPEGRepresentation(image, 0.7)!
-    let id = ApiRequest.tideModel?.id
+    let id = ReadingResponse.shared.tideModel?.id
     let category = 1
-    ApiRequest().uploadPhoto(photoData: imageData, id:id!, category: category)
+    PostPhoto().uploadPhoto(photoData: imageData, id:id!, category: category)
+
   }
 
-  
+
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     defer { picker.dismiss(animated: true) }
     print("did cancel")
   }
 }
+

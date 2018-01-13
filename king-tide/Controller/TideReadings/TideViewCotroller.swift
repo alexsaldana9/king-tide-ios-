@@ -15,15 +15,13 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
   @IBOutlet weak var depthTextField: UITextField!
   @IBOutlet weak var salinityTextField: UITextField!
   @IBOutlet weak var descriptionTextField: UITextField!
-
   @IBOutlet weak var feetMesuramentControl: UISegmentedControl!
   @IBOutlet weak var salinityMesuramentControl: UISegmentedControl!
 
 
-
-  let locationManager = CLLocationManager()
-  var location: CLLocation?
-
+//  let locationManager = CLLocationManager()
+//  var location: CLLocation?
+  let locationService = LocationManager.shared
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,28 +33,20 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
       #selector(self.clear(notification:)), name:
       Notification.Name.Readings.success, object: nil)
 
-    locationManager.requestWhenInUseAuthorization()
-
-
-    if CLLocationManager.locationServicesEnabled() {
-      locationManager.delegate = self
-      locationManager.desiredAccuracy = kCLLocationAccuracyBest
-      locationManager.startUpdatingLocation()
-    }
+//    locationManager.requestWhenInUseAuthorization()
+//
+//    if CLLocationManager.locationServicesEnabled() {
+//      locationManager.delegate = self
+//      locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//      locationManager.startUpdatingLocation()
+//    }
   }
 
 
-  func locationManager(_ manager: CLLocationManager,
-                       didUpdateLocations locations: [CLLocation]) {
-    self.location = locations.first
-  }
-
-  //  func locationManager(_ manager: CLLocationManager,
-  //                       didChangeAuthorization status: CLAuthorizationStatus) {
-  //    if(status == CLAuthorizationStatus.denied) {
-  //      //show map so the user can pin location on the map
-  //    }
-  //  }
+//  func locationManager(_ manager: CLLocationManager,
+//                       didUpdateLocations locations: [CLLocation]) {
+//    self.location = locations.first
+//  }
 
 
   @objc func clear(notification: Notification) {
@@ -64,7 +54,7 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
     DispatchQueue.main.async {
       self.depthTextField.text = nil
       self.salinityTextField.text = nil
-      self.descriptionTextField.text = "take pic"// remove
+      self.descriptionTextField.text = nil
     }
 
   }
@@ -73,24 +63,24 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
 
     guard let param = getParam() else { return }
 
-    if isAuthorized() {
-
+    if locationService.isAuthorized() {
       ApiRequest().post(param: param)
 
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      let controller = storyboard.instantiateViewController(
-        withIdentifier :"TakePicture") as! TakePicture
+      guard let controller = storyboard?.instantiateViewController(
+        withClass: TakePicture.self) else { return }
+
       self.present(controller, animated: true)
 
     } else {
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      let controller = storyboard.instantiateViewController(
-        withIdentifier :"MapLocation") as! MapLocation
+      guard let controller = storyboard?.instantiateViewController(
+        withClass: MapLocation.self) else { return }
       controller.param = param
+
       self.present(controller, animated: true)
     }
 
   }
+
   func getParam() -> [String:String]? {
     guard let depth = Float(depthTextField.text!) else { return  nil}
     guard let salinity = Int(salinityTextField.text!) else { return nil }
@@ -103,8 +93,8 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
     let mesuramentSalinity = salinityMesuramentControl
       .isEnabledForSegment(at: 0) ? "ppm": "ppt"
 
-    let latitude = location?.coordinate.latitude ?? 0
-    let longitude = location?.coordinate.longitude ?? 0
+    let latitude = locationService.location?.coordinate.latitude ?? 0
+    let longitude = locationService.location?.coordinate.longitude ?? 0
     let param = [
       "depth": "\(depth)",
       "salinity": "\(salinity)",
@@ -116,18 +106,18 @@ class TideViewCotroller: UIViewController,CLLocationManagerDelegate {
     ]
     return param
   }
-  func isAuthorized() -> Bool {
-
-    if CLLocationManager.locationServicesEnabled() {
-      switch CLLocationManager.authorizationStatus() {
-      case .notDetermined, .restricted, .denied:
-        return false
-      case .authorizedAlways, .authorizedWhenInUse:
-        return true
-      }
-    }
-    return false
-  }
+//  func isAuthorized() -> Bool {
+//
+//    if CLLocationManager.locationServicesEnabled() {
+//      switch CLLocationManager.authorizationStatus() {
+//      case .notDetermined, .restricted, .denied:
+//        return false
+//      case .authorizedAlways, .authorizedWhenInUse:
+//        return true
+//      }
+//    }
+//    return false
+//  }
 
 
 }

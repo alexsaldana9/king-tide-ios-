@@ -157,7 +157,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmButton" destination="bgg-60-JMG" id="MHq-3J-qhL"/>
-                        <outlet property="map" destination="PMJ-5z-Und" id="f5a-Yj-mD6"/>
+                        <outlet property="mapView" destination="PMJ-5z-Und" id="f5a-Yj-mD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRi-gd-jVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enO-m0-XdY">
-                                <rect key="frame" x="22" y="536" width="330" height="63"/>
+                                <rect key="frame" x="23" y="536" width="329" height="63"/>
                                 <color key="backgroundColor" red="0.027450980390000001" green="0.1058823529" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="sKe-Rw-1rJ"/>
@@ -225,7 +225,7 @@
         <!--Submission View Controller-->
         <scene sceneID="PrG-5p-pf3">
             <objects>
-                <viewController id="tC8-IX-cW1" customClass="SubmissionViewController" customModule="king_tide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubmissionViewController" id="tC8-IX-cW1" customClass="SubmissionViewController" customModule="king_tide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OQC-7d-H3m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

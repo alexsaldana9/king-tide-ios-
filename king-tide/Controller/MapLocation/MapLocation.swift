@@ -10,11 +10,14 @@ import UIKit
 import MapKit
 
 class MapLocation: UIViewController, MKMapViewDelegate {
+
   @IBOutlet weak var confirmButton: UIButton!
+  @IBOutlet weak var mapView: MKMapView!
   var param: [String:String] = [:]
-  @IBOutlet weak var map: MKMapView!
   var annotation = MKPointAnnotation()
-  private var initialLocation = CLLocationCoordinate2D(latitude: 25.758994654048518, longitude: -80.193096070435473)
+
+  private var initialLocation = CLLocationCoordinate2D(
+    latitude: 25.758994654048518, longitude: -80.193096070435473)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,10 +27,9 @@ class MapLocation: UIViewController, MKMapViewDelegate {
                                                action: #selector
                                                 (self.handleTap(_:)))
 
-    map.addGestureRecognizer(tapRecognizer)
+    mapView.addGestureRecognizer(tapRecognizer)
     self.confirmButton.isEnabled = false
     self.confirmButton.alpha = 0.2
-
 
 
   }
@@ -42,17 +44,17 @@ class MapLocation: UIViewController, MKMapViewDelegate {
   }
   @objc func handleTap(_ gestureReconizer: UILongPressGestureRecognizer) {
 
-    let location = gestureReconizer.location(in: map)
-    let coordinate = map.convert(location,toCoordinateFrom: map)
-    map.removeAnnotation(annotation)
+    let location = gestureReconizer.location(in: mapView)
+    let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+    mapView.removeAnnotation(annotation)
 
     annotation.coordinate = coordinate
-    map.addAnnotation(annotation)
+    mapView.addAnnotation(annotation)
     centerMapOnLocation(location: annotation.coordinate)
   }
   func centerMapOnLocation(location: CLLocationCoordinate2D) {
     self.initialLocation = location
-    map.setCenter(location, animated: true)
+    mapView.setCenter(location, animated: true)
     self.confirmButton.alpha = 1
     self.confirmButton.isEnabled = true
   }
